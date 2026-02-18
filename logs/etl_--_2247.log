@@ -1,0 +1,17 @@
+------------------------------- 
+Starting ETL run at 21-11-2025 22:47:07.81 
+------------------------------- 
+Running fetch_weather.py 
+D:\weather_etl_project\ingest\fetch_weather.py:21: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  timestamp = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%S")
+Saved raw data for Bengaluru
+Saved raw data for Chennai
+Running load_raw.py 
+D:\weather_etl_project\scripts\load_raw.py:26: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  (location, datetime.datetime.utcnow(), json.dumps(data))
+Loaded raw JSON into PostgreSQL!
+Running transform_clean.py 
+Transformed & loaded clean data!
+------------------------------- 
+ETL run completed at 21-11-2025 22:47:13.12 
+------------------------------- 

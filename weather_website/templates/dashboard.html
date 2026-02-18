@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+
+    <div>
+        <label>Locations:</label>
+        <select id="locationSelect" multiple></select>
+        <label>Start Date:</label>
+        <input type="date" id="startDate">
+        <label>End Date:</label>
+        <input type="date" id="endDate">
+        <button onclick="fetchData()">Load Data</button>
+    </div>
+
+    <div id="loadingSpinner" class="d-none">Loading...</div>
+
+    <div id="kpiContainer" class="row"></div>
+
+    <canvas id="tempChart" width="400" height="150"></canvas>
+    <canvas id="humChart" width="400" height="150"></canvas>
+    <canvas id="heatmapChart" width="400" height="150"></canvas>
+
+    <div>Last Updated: <span id="lastUpdated"></span></div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

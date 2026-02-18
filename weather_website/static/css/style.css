@@ -1,0 +1,148 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2f3640;
+    color: #fff;
+}
+
+body.light-mode header {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #e84118;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+header button:hover {
+    background-color: #c23616;
+}
+
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: #dcdde1;
+}
+
+body.light-mode #controls {
+    background-color: #f0f0f0;
+}
+
+#controls label {
+    font-weight: bold;
+}
+
+#controls select,
+#controls input,
+#controls button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#controls button {
+    background-color: #44bd32;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#controls button:hover {
+    background-color: #4cd137;
+}
+
+#exports {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+#exports button {
+    background-color: #273c75;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#exports button:hover {
+    background-color: #192a56;
+}
+
+/* KPI cards */
+.kpi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.kpi-card {
+    background-color: #f1f2f6;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+}
+
+body.light-mode .kpi-card {
+    background-color: #fff;
+}
+
+/* Charts */
+#charts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+canvas {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    #charts {
+        grid-template-columns: 1fr 1fr;
+    }
+}

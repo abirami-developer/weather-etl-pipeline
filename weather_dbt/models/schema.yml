@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: weather_clean_model
+    description: "Transformed clean weather data"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - not_null
+          - unique
+      - name: location
+        tests:
+          - not_null
+      - name: observed_at
+        tests:
+          - not_null

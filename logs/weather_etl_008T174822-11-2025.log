@@ -1,0 +1,50 @@
+------------------------------------ 
+Running Weather ETL: 008T174822-11-2025 
+------------------------------------ 
+Running fetch_weather.py... 
+D:\weather_etl_project\ingest\fetch_weather.py:21: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  timestamp = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%S")
+Saved raw data for Bengaluru
+Saved raw data for Chennai
+Running load_raw.py... 
+D:\weather_etl_project\scripts\load_raw.py:26: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  (location, datetime.datetime.utcnow(), json.dumps(data))
+Loaded raw JSON into PostgreSQL!
+Running dbt run... 
+18:38:28  Running with dbt=1.10.15
+18:38:29  Registered adapter: postgres=1.9.1
+18:38:31  Found 1 model, 4 data tests, 459 macros
+18:38:31  
+18:38:31  Concurrency: 1 threads (target='dev')
+18:38:31  
+18:38:32  1 of 1 START sql view model public.weather_clean_model ......................... [RUN]
+18:38:32  1 of 1 OK created sql view model public.weather_clean_model .................... [CREATE VIEW in 0.47s]
+18:38:32  
+18:38:32  Finished running 1 view model in 0 hours 0 minutes and 1.33 seconds (1.33s).
+18:38:33  
+18:38:33  Completed successfully
+18:38:33  
+18:38:33  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+18:38:44  Running with dbt=1.10.15
+18:38:45  Registered adapter: postgres=1.9.1
+18:38:47  Found 1 model, 4 data tests, 459 macros
+18:38:47  
+18:38:47  Concurrency: 1 threads (target='dev')
+18:38:47  
+18:38:47  1 of 4 START test not_null_weather_clean_model_id .............................. [RUN]
+18:38:48  1 of 4 PASS not_null_weather_clean_model_id .................................... [PASS in 0.30s]
+18:38:48  2 of 4 START test not_null_weather_clean_model_location ........................ [RUN]
+18:38:48  2 of 4 PASS not_null_weather_clean_model_location .............................. [PASS in 0.18s]
+18:38:48  3 of 4 START test not_null_weather_clean_model_observed_at ..................... [RUN]
+18:38:48  3 of 4 PASS not_null_weather_clean_model_observed_at ........................... [PASS in 0.31s]
+18:38:48  4 of 4 START test unique_weather_clean_model_id ................................ [RUN]
+18:38:48  4 of 4 PASS unique_weather_clean_model_id ...................................... [PASS in 0.21s]
+18:38:49  
+18:38:49  Finished running 4 data tests in 0 hours 0 minutes and 1.81 seconds (1.81s).
+18:38:49  
+18:38:49  Completed successfully
+18:38:49  
+18:38:49  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+------------------------------------ 
+ETL completed at  0:08:51.30 
+------------------------------------ 

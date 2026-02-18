@@ -1,0 +1,25 @@
+------------------------------------   :: replace leading space with 0.log
+Running Weather ETL: 1-02T000102  :: replace leading space with 0   :: replace leading space with 0.log
+------------------------------------   :: replace leading space with 0.log
+Running fetch_weather.py...   :: replace leading space with 0.log
+D:\weather_etl_project\ingest\fetch_weather.py:21: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  timestamp = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%S")
+Saved raw data for Bengaluru
+Saved raw data for Chennai
+Running load_raw.py...   :: replace leading space with 0.log
+D:\weather_etl_project\scripts\load_raw.py:26: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  (location, datetime.datetime.utcnow(), json.dumps(data))
+Loaded raw JSON into PostgreSQL!
+Running dbt run...   :: replace leading space with 0.log
+Usage: dbt run [OPTIONS]
+Try 'dbt run -h' for help.
+
+Error: Got unexpected extra arguments (:: replace leading space with 0.log)
+Running dbt tests...   :: replace leading space with 0.log
+Usage: dbt test [OPTIONS]
+Try 'dbt test -h' for help.
+
+Error: Got unexpected extra arguments (:: replace leading space with 0.log)
+------------------------------------   :: replace leading space with 0.log
+ETL completed at  0:01:13.88   :: replace leading space with 0.log
+------------------------------------   :: replace leading space with 0.log
